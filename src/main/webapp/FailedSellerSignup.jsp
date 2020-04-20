@@ -30,7 +30,16 @@
         <div class="col-sm-6 col-sm-offset-3">
             <br><br> <h2 style="color: darksalmon">Failed to Signup</h2>
             <br>
-            <p style="color: darksalmon; font-size: large; font-family: Arial">Something went wrong. Sorry for the inconvenience.</p><br><br>
+            <%
+                if (session.getAttribute("sellerContactNo") != null)
+                out.println(session.getAttribute("sellerContactNo")+ " already exists");
+
+               if (session.getAttribute("sellerEmailId") != null)
+                out.println(session.getAttribute("sellerEmailId")+ " already exists");
+
+            %>
+
+            <p style="color: darksalmon; font-size: large; font-family: Arial">Please try with different value</p><br><br>
             <a href="SignUpAsSeller.jsp" action="SignUpAsSeller.jsp" class="btn btn-primary" style="font-size: medium"> Return to Signup </a>
             <br><br>
         </div>
