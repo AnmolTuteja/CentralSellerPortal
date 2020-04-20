@@ -20,6 +20,8 @@ and open the template in the editor.
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 </head>
+
+
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -39,36 +41,35 @@ and open the template in the editor.
                     <h4 class="card-title mt-2">Seller Sign up</h4>
                 </header>
                 <article class="card-body">
-                    <form class ="form-signin" id="admission-form" action = "/addseller" method="post" ><form>
+                    <form class ="form-signin" id="admission-form" action = "/addseller" method="post" onsubmit="return validateemail();"><form>
                         <form :hidden path="id"/>
                         <div class="form-row">
                             <div class="col form-group">
                                 <label>Name </label>
-                                <input type="text" id="s_name" name="s_name" class="form-control" placeholder="" required>
+                                <input type="text" id="s_name" name="s_name" class="form-control" placeholder="" maxlength="100" required="true">
                             </div> <!-- form-group end.// -->
                             <!-- form-group end.// -->
                         </div> <!-- form-row end.// -->
                         <div class="form-group">
                             <label>Address</label>
-                            <input type="text" id="s_address" name="s_address" class="form-control" placeholder="" required>
+                            <input type="text" id="s_address" name="s_address" class="form-control" placeholder=""  maxlength="300" required>
 
                         </div>
                         <div class="form-group">
                             <label>Mobile No.</label>
-                            <input type="number" id="s_mobile" name="s_mobile" class="form-control" placeholder=""   minlength="10" maxlength="10" required>
-
+                            <input type="text" id="s_mobile" name="s_mobile" class="form-control" placeholder="" pattern="[1-9]{1}[0-9]{9}" required>
+                            <small class="form-text text-muted">Please ensure its 10 digit number</small>
                         </div>
                         <div class="form-group">
                             <label>Email address</label>
-                            <input type="email" id="s_mail" name="s_mail" class="form-control" placeholder="" required>
+                            <input type="email" id="s_mail" name="s_mail" class="form-control" placeholder=""  maxlength="100"required>
                             <small class="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div> <!-- form-group end.// -->
                         <div class="form-group">
                             <label>Store Name</label>
-                            <input type="text" id="s_shop" name="s_shop" class="form-control" placeholder="" required>
+                            <input type="text" id="s_shop" name="s_shop" class="form-control" placeholder=""  maxlength="100" required>
 
                         </div>
-
 
                         <div class="form-group">
                             <label>Create password</label>
@@ -90,6 +91,18 @@ and open the template in the editor.
 
                         });
                     </script>
+                        <script>
+                            function validateemail()
+                            {
+                                var x=document.myform.s_mail.value;
+                                var atposition=x.indexOf("@");
+                                var dotposition=x.lastIndexOf(".");
+                                if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){
+                                    alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);
+                                    return false;
+                                }
+                            }
+                        </script>
 
 
 
