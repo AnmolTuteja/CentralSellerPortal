@@ -33,8 +33,8 @@
 
 <!--                <p style="font-size:20px;color:#5C5C5C;">Thank you  + for Registering with us. You can Login by clicking at the button below.-->
 <!--                    </p>-->
-                <p th:text="Thank You for Registering with us. You can Login by clicking at the button below.' " />
-                <a href="index.html" action="index.html" class="btn btn-success">     Log in      </a>
+                <p Thank You for Registering with us. You can Login by clicking at the button below.</p>
+                <a href="index.html" action="index.html" class="btn btn-success">Log in</a>
                 <br><br>
             </div>
 

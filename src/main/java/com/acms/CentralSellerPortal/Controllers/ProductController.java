@@ -54,7 +54,8 @@ public class ProductController {
     }
 
     @RequestMapping(value = "/update/{p_id}/{id}" , method = RequestMethod.POST)
-    public RedirectView updateProduct(@PathVariable(value = "p_id") Long product_id,@PathVariable(value = "id") Long seller_id,
+    public RedirectView updateProduct(@PathVariable(value = "p_id") Long product_id,
+                                      @PathVariable(value = "id") Long seller_id,
                                 @RequestParam("ep_name") String n ,
                                 @RequestParam("ep_description") String d,
                                 @RequestParam("ep_price") int p,

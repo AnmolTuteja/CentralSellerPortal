@@ -112,7 +112,8 @@
 <br>
 <div class="jumbotron">
     <div class="container" style="font-family: Ubuntu; font-size: large">
-        <h1> Welcome, ${sellerName}.</h1>
+        <!--<h1> Welcome, ${sellerName}.</h1>-->
+        <h1> Welcome user</h1>
         <h1> Here is your Business Platform!</h1>
         <p>We provide platform for crores of Businesses to interact and grow. No Listing fees, easy steps and professional support that helps you grow your business.</p>
         <p >Start Selling...</p>

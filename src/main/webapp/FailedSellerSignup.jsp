@@ -33,6 +33,7 @@
             <%
                 if (session.getAttribute("sellerContactNo") != null)
                 out.println(session.getAttribute("sellerContactNo")+ " already exists");
+                out.println();
 
                if (session.getAttribute("sellerEmailId") != null)
                 out.println(session.getAttribute("sellerEmailId")+ " already exists");
