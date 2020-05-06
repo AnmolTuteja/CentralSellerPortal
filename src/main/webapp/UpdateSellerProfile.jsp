@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="../../css/main.css">
     <script src="../../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <title>Update Seller Profile</title>
+    <style>
+        body{
+            font-family: Ubuntu;
+        }
+    </style>
 </head>
 <body>
 <% long id = Long.parseLong(request.getParameter("id")); %>
@@ -28,7 +33,7 @@
             </form>
         </div>
         <div class="navbar-header">
-            <form class ="form-view" id="view-form-viewprofile"  action = "/viewSeller/<%=id%>" method="get">
+            <form class ="form-view" id="view-form-viewprofile"  action = "/getSellerById/<%=id%>" method="get">
                 <form :hidden path="id"/>
                 <div class="form-row">
                     <div class="form-group">
@@ -61,7 +66,7 @@
             </form>
         </div>
         <div class="navbar-header">
-            <form class ="form-view" id="view-form-viewproduct"  action = "/products/displayBySellerId/<%=id%>" method="get">
+            <form class ="form-view" id="view-form-viewproduct"  action = "/products/getBySellerId/<%=id%>" method="get">
                 <form :hidden path="id"/>
                 <div class="form-row">
                     <div class="form-group">
@@ -94,7 +99,7 @@
             </header>
             <article class="card-body">
 
-                <form class ="form-update" id="updation-form" action = "/UpdateSeller/<%=id%>" method="post">
+                <form class ="form-update" id="updation-form" action = "/postUpdatedSeller/<%=id%>" method="post">
                     <form :hidden path="id"/>
                     <div class="form-row">
                         <div class="col form-group">

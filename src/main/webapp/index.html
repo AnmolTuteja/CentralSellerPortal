@@ -73,25 +73,24 @@
                         <input type="submit"  id="sub" class="btnSubmit" value="Login" />
                     </div>
                     <div class="form-group">
-                        <a href="SignUpAsSeller.jsp" action="SignUpAsSeller.jsp" class="ForgetPwd">Not a seller yet? Register here..</a>
+                        <a href="SignUpAsSeller.jsp" action="SignUpAsSeller.jsp" class="ForgetPwd">Not a member yet? Register here..</a>
                     </div>
                 </form>
             </div>
             <div class="col-md-6 login-form-2">
-                <h3>Company?</h3>
-                <form>
+                <h3>E-commerce Platform?</h3>
+                <form id="ecomm-login-form" action = "/verifyecommerce" method="get">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Contact No." value="" />
+                        <input type="text" name="c_email" class="form-control" placeholder="Email Id" value="" />
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Your Password" value="" />
+                        <input type="password" name="c_password" class="form-control" placeholder="Your Password" value="" />
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btnSubmit" value="Login" />
                     </div>
                     <div class="form-group">
-
-                        <a href="SignUpAsCompany.jsp" action="SignUpAsCompany.jsp" class="ForgetPwd" value="Login">Not a company yet? Register here..</a>
+                        <a href="SignUpAsCompany.jsp" action="SignUpAsCompany.jsp" class="ForgetPwd" value="Login">Not a member yet? Register here..</a>
                     </div>
                 </form>
             </div>
@@ -104,9 +103,9 @@
 
     <hr>
 
-    <footer>
-        <p><a>Hello Admin, click here to login</a></p>
-    </footer>
+<!--    <footer>-->
+<!--        <p><a>Hello Admin, click here to login</a></p>-->
+<!--    </footer>-->
 </div> <!-- /container -->
 
 </body>

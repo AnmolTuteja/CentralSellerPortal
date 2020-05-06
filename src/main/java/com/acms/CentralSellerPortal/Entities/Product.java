@@ -39,7 +39,12 @@ public class Product implements Serializable {
     public Product() {
     }
 
-    public Product(int product_id, @NotNull String product_name, @NotNull int price, @NotNull String product_description, @NotNull int discount, Seller seller) {
+    public Product(int product_id,
+                   @NotNull String product_name,
+                   @NotNull int price,
+                   @NotNull String product_description,
+                   @NotNull int discount,
+                   Seller seller) {
         this.productId = product_id;
         this.productName = product_name;
         this.price = price;

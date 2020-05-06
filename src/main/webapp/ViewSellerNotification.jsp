@@ -11,7 +11,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Seller Dashboard</title>
+    <title>Ecommerce Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -22,27 +22,18 @@
     <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="../css/main.css">
 
-<%--    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">--%>
+    <%--    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">--%>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
-    <script>
-    $(document).ready(function(){
-    $("#view-form-viewprofile").click(function(){
-    $("#profile").show();
-    });
-    });
-    </script>
     <style>
         body{
             font-family: Ubuntu;
         }
     </style>
-
-
 </head>
 <body>
-<% long id = Long.parseLong(request.getParameter("id")); %>
+<% long e_id = Long.parseLong(request.getParameter("e_id")); %>
 
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="font-size: medium; background-color: #2A2A2A ; font-family: Ubuntu">
     <div class="container">
@@ -51,14 +42,14 @@
                 <form :hidden path="id"/>
                 <div class="form-row">
                     <div class="form-group">
-                        <a  type="submit"  href="/SellerDashboard.jsp?id=<%=id%>" style="color: whitesmoke" class="btn"> Central Seller Portal</a>
+                        <a  type="submit"  href="/EcommDashboard.jsp?e_id=<%=e_id%>" style="color: whitesmoke" class="btn"> Central Seller Portal</a>
                     </div> <!-- form-group// -->
                     <!-- form-group end.// -->
                 </div>
             </form>
         </div>
         <div class="navbar-header">
-            <form class ="form-view" id="view-form-viewprofile"  action = "/getSellerById/<%=id%>" method="get">
+            <form class ="form-view" id="view-form-viewprofile"  action = "/ecomm/getEcommerce/<%=e_id%>" method="get">
                 <form :hidden path="id"/>
                 <div class="form-row">
                     <div class="form-group">
@@ -69,38 +60,39 @@
             </form>
         </div>
         <div class="navbar-header">
-            <form class ="form-view" id="view-form-updateseller"  method="get">
+            <form class ="form-view" id="view-form-update-ecomm"  method="get">
                 <form :hidden path="id"/>
                 <div class="form-row">
                     <div class="form-group">
-                        <a class="btn" href="/UpdateSellerProfile.jsp?id=<%=id%>" style="color: whitesmoke; background-color: #2A2A2A" action="UpdateSellerProfile.jsp" role="button">Update Profile</a>
+                        <a class="btn" href="/UpdateEcommProfile.jsp?e_id=<%=e_id%>" style="color: whitesmoke; background-color: #2A2A2A" action="UpdateEcommProfile.jsp" role="button">Update Profile</a>
                     </div> <!-- form-group// -->
                     <!-- form-group end.// -->
                 </div>
             </form>
         </div>
         <div class="navbar-header">
-            <form class ="form-view" id="view-form-addproduct"   method="get">
+            <form class ="form-view" id="view-form-view-sellers" action="/getAllSellers/<%=e_id%>" method="get">
                 <form :hidden path="id"/>
                 <div class="form-row">
                     <div class="form-group">
-                        <a  id = "view-profile-addproduct" type="submit" href="/AddProduct.jsp?id=<%=id%>"  action="AddProduct.jsp"  style="color: whitesmoke; background-color: #2A2A2A" class="btn"> Add Product</a>
+                        <button id = "view-sellers" type="submit"   style="color: whitesmoke; background-color: #2A2A2A" class="btn"> View All Sellers</button>
                     </div> <!-- form-group// -->
                     <!-- form-group end.// -->
                 </div>
             </form>
         </div>
         <div class="navbar-header">
-            <form class ="form-view" id="view-form-viewproduct"  action = "/products/getBySellerId/<%=id%>" method="get">
+            <form class ="form-view" id="view-form-view-notifivation" action="getAllNotification/<%=e_id%>" method="get">
                 <form :hidden path="id"/>
                 <div class="form-row">
                     <div class="form-group">
-                        <button  id = "view-profile-viewproduct" type="submit"  style="color: whitesmoke; background-color: #2A2A2A" class="btn"> View Products</button>
+                        <button id = "view-notification" type="submit"   style="color: whitesmoke; background-color: #2A2A2A" class="btn"> Notifications</button>
                     </div> <!-- form-group// -->
                     <!-- form-group end.// -->
                 </div>
             </form>
         </div>
+
         <div class="navbar-header">
             <form class ="form-view" id="view-form" action="/destroy" method="post">
                 <form :hidden path="id"/>
@@ -115,15 +107,18 @@
     </div>
 </nav>
 <br>
-<div class="jumbotron">
+
+<div class="jumbotron" id="product">
     <div class="container" style="font-family: Ubuntu; font-size: large">
-        <!--<h1> Welcome, ${sellerName}.</h1>-->
-        <h1> Welcome user</h1>
-        <h1> Here is your Business Platform!</h1>
-        <p>We provide platform for crores of Businesses to interact and grow. No Listing fees, easy steps and professional support that helps you grow your business.</p>
-        <p >Start Selling...</p>
+        <h2>From Notifications: Updated Seller </h2>
+        <p><b>Name:</b>${notificationSeller.sellerName}</p>
+        <p><b>Address:</b>${notificationSeller.sellerAddress}</p>
+        <p><b>Contact No:</b>${notificationSeller.sellerContactNo}</p>
+        <p><b>Email Id:</b>${notificationSeller.sellerEmailId}</p>
+        <p><b>Shop:</b>${notificationSeller.shopName}</p>
     </div>
 </div>
+
 
 <br>
 

@@ -19,6 +19,11 @@ and open the template in the editor.
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <style>
+            body{
+                font-family: Ubuntu;
+            }
+        </style>
 
     </head>
     <body>
@@ -41,37 +46,34 @@ and open the template in the editor.
                         <h4 class="card-title mt-2">Company Sign up</h4>
                     </header>
                     <article class="card-body">
-                        <form>
+                        <form class ="form-signin" id="ecomm-admission-form" action = "/ecomm/postEcommerce" method="post" ><form>
+                            <form :hidden path="id"/>
+
                             <div class="form-row">
                                 <div class="col form-group">
                                     <label>Company Name </label>   
-                                    <input type="text"  id="cName" name="cName" class="form-control" placeholder="">
+                                    <input type="text"  id="cName" name="cName" class="form-control" maxlength="100" placeholder="">
                                 </div> <!-- form-group end.// -->
                                 <!-- form-group end.// -->
                             </div> <!-- form-row end.// -->
 
                             <div class="form-group">
                                 <label>Email address</label>
-                                <input type="email" id="cEmailId" name="cEmailId" class="form-control" placeholder="" required>
+                                <input type="email" id="cEmailId" name="cEmailId" class="form-control" maxlength="100" placeholder="" required>
                                 <small class="form-text text-muted">We'll never share your email with anyone else.</small>
                             </div>
 
-                            <div class="form-group">
-                                <label>Mobile No.</label>
-                                <input type="number" id="cContactNo" name="cContactNo" class="form-control" placeholder="">
-
-                            </div>
                             <!-- form-group end.// -->
 
 
 
                             <div class="form-group">
                                 <label>Create password</label>
-                                <input class="form-control" name="cPassword"  id="cPassword" type="password">
+                                <input class="form-control" name="cPassword"  id="cPassword" type="password" minlength="4">
                             </div> <!-- form-group end.// -->
                             <div class="form-group">
                                 <label>Confirm password</label>
-                                <input class="form-control" name="cPass" id="cPass" type="password">
+                                <input class="form-control" name="cPass" id="cPass" type="password" minlength="4">
                             </div>
                             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
                             <p id ="c-pass-match" style="color:crimson ; font-family: Arial" ></p>

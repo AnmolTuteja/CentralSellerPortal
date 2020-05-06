@@ -29,11 +29,7 @@
         <div class="row text-center">
             <div class="col-sm-6 col-sm-offset-3">
                 <br><br> <h2 style="color:#0fad00">Success</h2>
-<!--                <img src="http://osmhotels.com//assets/check-true.jpg">-->
-
-<!--                <p style="font-size:20px;color:#5C5C5C;">Thank you  + for Registering with us. You can Login by clicking at the button below.-->
-<!--                    </p>-->
-                <p Thank You for Registering with us. You can Login by clicking at the button below.</p>
+                <p>Thank You for Registering with us. You can Login by clicking at the button below.</p>
                 <a href="index.html" action="index.html" class="btn btn-success">Log in</a>
                 <br><br>
             </div>

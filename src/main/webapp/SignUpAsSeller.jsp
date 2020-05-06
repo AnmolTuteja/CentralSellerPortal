@@ -1,6 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -9,15 +7,6 @@ and open the template in the editor.
 -->
 <html>
 <head>
-
-    <style>
-        .error
-        {
-            color: #ff0000;
-            font-weight: bold;
-        }
-    </style>
-
     <title>Seller Registration</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,10 +18,13 @@ and open the template in the editor.
     <link rel="stylesheet" href="../../css/main.css">
     <script src="../../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+        body{
+            font-family: Ubuntu;
+        }
+    </style>
 
 </head>
-
-
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -52,35 +44,36 @@ and open the template in the editor.
                     <h4 class="card-title mt-2">Seller Sign up</h4>
                 </header>
                 <article class="card-body">
-                    <form class ="form-signin" id="admission-form" action = "/addseller" method="post" onsubmit="return validateemail();"><form>
+                    <form class ="form-signin" id="admission-form" action = "/postSeller" method="post" ><form>
                         <form :hidden path="id"/>
                         <div class="form-row">
                             <div class="col form-group">
                                 <label>Name </label>
-                                <input type="text" id="s_name" name="s_name" class="form-control" placeholder="" maxlength="100" required="true">
+                                <input type="text" id="s_name" name="s_name" class="form-control" placeholder=""  maxlength="100" required>
                             </div> <!-- form-group end.// -->
                             <!-- form-group end.// -->
                         </div> <!-- form-row end.// -->
                         <div class="form-group">
                             <label>Address</label>
-                            <input type="text" id="s_address" name="s_address" class="form-control" placeholder=""  maxlength="300" required>
+                            <input type="text" id="s_address" name="s_address" class="form-control" placeholder="" maxlength="300" required>
 
                         </div>
                         <div class="form-group">
                             <label>Mobile No.</label>
-                            <input type="text" id="s_mobile" name="s_mobile" class="form-control" placeholder="" pattern="[1-9]{1}[0-9]{9}" required>
+                            <input type="number" id="s_mobile" name="s_mobile" class="form-control" placeholder=""   minlength="10" maxlength="10"  pattern="[1-9]{1}[0-9]{9}" required>
                             <small class="form-text text-muted">Please ensure its 10 digit number</small>
                         </div>
                         <div class="form-group">
                             <label>Email address</label>
-                            <input type="email" id="s_mail" name="s_mail" class="form-control" placeholder=""  maxlength="100"required>
+                            <input type="email" id="s_mail" name="s_mail" class="form-control" placeholder="" required>
                             <small class="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div> <!-- form-group end.// -->
                         <div class="form-group">
                             <label>Store Name</label>
-                            <input type="text" id="s_shop" name="s_shop" class="form-control" placeholder=""  maxlength="100" required>
+                            <input type="text" id="s_shop" name="s_shop" class="form-control" placeholder="" required>
 
                         </div>
+
 
                         <div class="form-group">
                             <label>Create password</label>
@@ -92,33 +85,16 @@ and open the template in the editor.
                         </div>
                     <p id ="pass-match" style="color:crimson ; font-family: Arial" ></p>
 
-                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-                    <script>
-                        $('#s_password, #s_pass').on('keyup', function () {
-                        if ($('#s_password').val() == $('#s_pass').val()) {
-                        $('#pass-match').html('Passwords match :D').css('color', 'green');
-                        } else
-                        $('#pass-match').html('Passwords dont match').css('color', 'red');
-
-                        });
-                    </script>
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
                         <script>
-                            function validateemail()
-                            {
-                                var x=document.myform.s_mail.value;
-                                var atposition=x.indexOf("@");
-                                var dotposition=x.lastIndexOf(".");
-                                if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){
-                                    alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);
-                                    return false;
-                                }
-                            }
+                            $('#s_password, #s_pass').on('keyup', function () {
+                            if ($('#s_password').val() == $('#s_pass').val()) {
+                            $('#pass-match').html('Passwords match :D').css('color', 'green');
+                            } else
+                            $('#pass-match').html('Passwords dont match').css('color', 'red');
+
+                            });
                         </script>
-
-
-
-
-
                         <div class="form-group">
                             <button id="sub-btn" type="submit" class="btn btn-primary btn-block"> Register  </button>
                         </div>

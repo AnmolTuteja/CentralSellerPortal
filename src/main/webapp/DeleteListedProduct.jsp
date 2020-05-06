@@ -45,7 +45,7 @@
             </form>
         </div>
         <div class="navbar-header">
-            <form class ="form-view" id="view-form-viewprofile"  action = "/viewSeller/<%=id%>" method="get">
+            <form class ="form-view" id="view-form-viewprofile"  action = "/getSellerById/<%=id%>" method="get">
                 <form :hidden path="id"/>
                 <div class="form-row">
                     <div class="form-group">
@@ -78,7 +78,7 @@
             </form>
         </div>
         <div class="navbar-header">
-            <form class ="form-view" id="view-form-viewproduct"  action = "/products/displayBySellerId/<%=id%>" method="get">
+            <form class ="form-view" id="view-form-viewproduct"  action = "/products/getBySellerId/<%=id%>" method="get">
                 <form :hidden path="id"/>
                 <div class="form-row">
                     <div class="form-group">
@@ -121,47 +121,9 @@
                     <!-- form-group end.// -->
                 </div>
             </form>
-
-
-
-
-<%--            <form class ="form-deleteProducts" id="cancelProducts-form" method="get">--%>
-<%--                <form :hidden path="id"/>--%>
-<%--                <div class="form-row">--%>
-<%--                    <div class="form-group">--%>
-<%--                        <button  type="submit"  class="btn btn-primary btn-lg"> Cancel</button>--%>
-<%--                    </div> <!-- form-group// -->--%>
-<%--                    <!-- form-group end.// -->--%>
-<%--                </div>--%>
-<%--            </form>--%>
-
         </div>
-<%--        <form class ="form-deleteProducts" id="deleteProducts-form"  action = "/products/delete/<%=p_id%>" method="get">--%>
-<%--            <form :hidden path="id"/>--%>
-<%--            <div class="form-row">--%>
-<%--                <div class="form-group">--%>
-<%--                    <button  style="margin-left: 0px" type="submit"  class="btn btn-primary btn-block"> Delete</button>--%>
-<%--                </div> <!-- form-group// -->--%>
-<%--                <!-- form-group end.// -->--%>
-<%--            </div>--%>
-<%--        </form>--%>
-<%--        <form class ="form-deleteProducts" id="cancelProducts-form"  method="get">--%>
-<%--            <form :hidden path="id"/>--%>
-<%--            <div class="form-row">--%>
-<%--                <div class="form-group">--%>
-<%--                    <button  style="margin-left: 0px" type="submit"  class="btn btn-primary btn-block">Cancel</button>--%>
-<%--                </div> <!-- form-group// -->--%>
-<%--                <!-- form-group end.// -->--%>
-<%--            </div>--%>
-<%--        </form>--%>
-
     </div>
 </div>
-
-
-
 <br>
-
-
 </body>
 </html>
