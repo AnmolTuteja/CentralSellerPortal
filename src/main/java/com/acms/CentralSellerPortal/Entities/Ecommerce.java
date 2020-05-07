@@ -25,6 +25,7 @@ public class Ecommerce implements Serializable {
     private String ecommEmailId;
 
     @Column
+    @Size(max=20)
     @NotNull
     private String ecommPassword;
 

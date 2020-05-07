@@ -44,7 +44,7 @@ and open the template in the editor.
                     <h4 class="card-title mt-2">Seller Sign up</h4>
                 </header>
                 <article class="card-body">
-                    <form class ="form-signin" id="admission-form" action = "/postSeller" method="post" ><form>
+                    <form class ="form-signin" id="admission-form" action = "/postSeller" method="post" onsubmit="return Validate()" >
                         <form :hidden path="id"/>
                         <div class="form-row">
                             <div class="col form-group">
@@ -60,28 +60,28 @@ and open the template in the editor.
                         </div>
                         <div class="form-group">
                             <label>Mobile No.</label>
-                            <input type="number" id="s_mobile" name="s_mobile" class="form-control" placeholder=""   minlength="10" maxlength="10"  pattern="[1-9]{1}[0-9]{9}" required>
+                            <input type="text" id="s_mobile" name="s_mobile" class="form-control" pattern="[1-9]{1}[0-9]{9}" placeholder=""  required>
                             <small class="form-text text-muted">Please ensure its 10 digit number</small>
                         </div>
                         <div class="form-group">
                             <label>Email address</label>
-                            <input type="email" id="s_mail" name="s_mail" class="form-control" placeholder="" required>
+                            <input type="email" id="s_mail" name="s_mail" class="form-control" maxlength="100" placeholder="" required>
                             <small class="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div> <!-- form-group end.// -->
                         <div class="form-group">
                             <label>Store Name</label>
-                            <input type="text" id="s_shop" name="s_shop" class="form-control" placeholder="" required>
+                            <input type="text" id="s_shop" name="s_shop" class="form-control"  maxlength="100" placeholder="" required>
 
                         </div>
 
 
                         <div class="form-group">
                             <label>Create password</label>
-                            <input class="form-control" id="s_password" name="s_password" type="password" minlength="4" required>
+                            <input class="form-control" id="s_password" name="s_password" type="password" minlength="4"  maxlength="20" required>
                         </div> <!-- form-group end.// -->
                         <div class="form-group">
                             <label>Confirm password</label>
-                            <input class="form-control" onclick="validate()" id="s_pass" name="s_pass" type="password" minlength="4" required>
+                            <input class="form-control"  id="s_pass" name="s_pass" type="password" minlength="4" maxlength="20" required>
                         </div>
                     <p id ="pass-match" style="color:crimson ; font-family: Arial" ></p>
 
@@ -94,6 +94,17 @@ and open the template in the editor.
                             $('#pass-match').html('Passwords dont match').css('color', 'red');
 
                             });
+                        </script>
+                        <script type="text/javascript">
+                            function Validate() {
+                                var password = document.getElementById("s_password").value;
+                                var confirmPassword = document.getElementById("s_pass").value;
+                                if (password != confirmPassword) {
+                                    alert("Passwords do not match.");
+                                    return false;
+                                }
+                                return true;
+                            }
                         </script>
                         <div class="form-group">
                             <button id="sub-btn" type="submit" class="btn btn-primary btn-block"> Register  </button>

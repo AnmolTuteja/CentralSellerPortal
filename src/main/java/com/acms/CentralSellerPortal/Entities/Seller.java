@@ -41,6 +41,7 @@ public class Seller implements Serializable {
     private String sellerEmailId;
 
     @Column
+    @Size(max=20)
     @NotNull
     private String sellerPassword;
 

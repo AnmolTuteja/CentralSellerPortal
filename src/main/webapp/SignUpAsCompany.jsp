@@ -46,13 +46,13 @@ and open the template in the editor.
                         <h4 class="card-title mt-2">Company Sign up</h4>
                     </header>
                     <article class="card-body">
-                        <form class ="form-signin" id="ecomm-admission-form" action = "/ecomm/postEcommerce" method="post" ><form>
+                        <form class ="form-signin" id="ecomm-admission-form" action = "/ecomm/postEcommerce" method="post" onsubmit="return Validate()">
                             <form :hidden path="id"/>
 
                             <div class="form-row">
                                 <div class="col form-group">
                                     <label>Company Name </label>   
-                                    <input type="text"  id="cName" name="cName" class="form-control" maxlength="100" placeholder="">
+                                    <input type="text"  id="cName" name="cName" class="form-control" maxlength="100" placeholder="" required>
                                 </div> <!-- form-group end.// -->
                                 <!-- form-group end.// -->
                             </div> <!-- form-row end.// -->
@@ -69,11 +69,11 @@ and open the template in the editor.
 
                             <div class="form-group">
                                 <label>Create password</label>
-                                <input class="form-control" name="cPassword"  id="cPassword" type="password" minlength="4">
+                                <input class="form-control" name="cPassword"  id="cPassword" type="password" minlength="4" maxlength="20" required>
                             </div> <!-- form-group end.// -->
                             <div class="form-group">
                                 <label>Confirm password</label>
-                                <input class="form-control" name="cPass" id="cPass" type="password" minlength="4">
+                                <input class="form-control" name="cPass" id="cPass" type="password" minlength="4" maxlength="20" required>
                             </div>
                             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
                             <p id ="c-pass-match" style="color:crimson ; font-family: Arial" ></p>
@@ -86,6 +86,17 @@ and open the template in the editor.
                                         $('#c-pass-match').html('Passwords dont match').css('color', 'red');
 
                                 });
+                            </script>
+                            <script type="text/javascript">
+                                function Validate() {
+                                    var password = document.getElementById("cPassword").value;
+                                    var confirmPassword = document.getElementById("cPass").value;
+                                    if (password != confirmPassword) {
+                                        alert("Passwords do not match.");
+                                        return false;
+                                    }
+                                    return true;
+                                }
                             </script>
 
 
