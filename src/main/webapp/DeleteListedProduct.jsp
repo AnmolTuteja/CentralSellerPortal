@@ -104,8 +104,8 @@
 <br>
 <div class="jumbotron">
     <div class="container" style="font-family: Ubuntu; font-size: large">
-        <h1> Welcome, ${sellerName}.</h1>
-        <h3 style="color: #c7254e"> Delete Product </h3>
+
+        <h3 style="color:#c7254e"> Delete Product </h3>
         <h4 style="font-size:20px;color:#5C5C5C;">Are you sure? </h4>
 
         <div class="ui-group-buttons">
@@ -114,9 +114,9 @@
                 <form :hidden path="id"/>
                 <div class="form-row">
                     <div class="form-group">
-                        <button  type="submit"  class="btn btn-primary btn-lg"> Delete</button>
+                        <button  type="submit"  class="btn"> Delete</button>
                         <div class="or or-lg"></div>
-                        <a  type="button" href="SellerDashboard.jsp?id=<%=id%>" class="btn btn-success btn-lg"> Cancel</a>
+                        <a  type="button" href="SellerDashboard.jsp?id=<%=id%>" class="btn"> Cancel</a>
                     </div> <!-- form-group// -->
                     <!-- form-group end.// -->
                 </div>

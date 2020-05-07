@@ -50,6 +50,7 @@ and open the template in the editor.
                             <div class="col form-group">
                                 <label>Name </label>
                                 <input type="text" id="s_name" name="s_name" class="form-control" placeholder=""  maxlength="100" required>
+
                             </div> <!-- form-group end.// -->
                             <!-- form-group end.// -->
                         </div> <!-- form-row end.// -->
