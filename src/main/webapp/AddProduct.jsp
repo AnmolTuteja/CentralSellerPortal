@@ -101,26 +101,27 @@
                     <div class="form-row">
                         <div class="col form-group">
                             <label>Product Name </label>
-                            <input type="text" id="p_name" name="p_name" class="form-control" placeholder="">
+                            <input type="text" id="p_name" name="p_name" class="form-control" placeholder="" maxlength="100" required>
                         </div> <!-- form-group end.// -->
                         <!-- form-group end.// -->
                     </div> <!-- form-row end.// -->
 
                     <div class="form-group">
                         <label>Description</label>
-                        <input type="text" id="p_description" name="p_description" class="form-control" placeholder="">
+                        <input type="text" id="p_description" name="p_description" class="form-control" placeholder="" maxlength="100" required>
 
                     </div>
                     <!-- form-group end.// -->
 
                     <div class="form-group">
                         <label>Price</label>
-                        <input id="p_price" name="p_price" class="form-control" type="number">
+                        <input id="p_price" name="p_price" class="form-control" type="number" min="1" required>
                     </div> <!-- form-group end.// -->
 
                     <div class="form-group">
                         <label>Discount</label>
-                        <input id="p_discount" name="p_discount" class="form-control" type="number">
+                        <input id="p_discount" name="p_discount" class="form-control" type="number" min="0" max="100" required>
+                        <small class="form-text text-muted">Discount can vary from 0-100.</small>
                     </div> <!-- form-group end.// -->
 
                     <div class="form-group">

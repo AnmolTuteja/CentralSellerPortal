@@ -1,6 +1,6 @@
 <%@ page import="com.acms.CentralSellerPortal.Controllers.SpringSessionController" %>
 <%@ page import="com.acms.CentralSellerPortal.Entities.Seller" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="com.acms.CentralSellerPortal.Entities.Product" %>
 <%@ page import="org.springframework.http.ResponseEntity" %>
 <%@ page import="com.acms.CentralSellerPortal.Controllers.SellerController" %>
@@ -122,27 +122,28 @@
                     <div class="form-row">
                         <div class="col form-group">
                             <label>Name </label>
-                            <input type="text" id="ep_name" name="ep_name" class="form-control"  value="<%=p_name%>">
+                            <input type="text" id="ep_name" name="ep_name" class="form-control"  value="<%=p_name%>" maxlength="100" required>
                         </div> <!-- form-group end.// -->
                         <!-- form-group end.// -->
                     </div> <!-- form-row end.// -->
                     <div class="form-group">
                         <label>Description</label>
-                        <input type="text" id="ep_description" name="ep_description" class="form-control" value="<%=p_desc%>">
+                        <input type="text" id="ep_description" name="ep_description" class="form-control" value="<%=p_desc%>" maxlength="100" required>
 
                     </div>
 
                     <!-- form-group end.// -->
                     <div class="form-group">
                         <label>Price</label>
-                        <input id="ep_price" name="ep_price" type="text" class="form-control" value="<%=p_price%>">
+                        <input id="ep_price" name="ep_price"  class="form-control" value="<%=p_price%>" type="number" min="1" required>
 
                     </div>
 
 
                     <div class="form-group">
                         <label>Discount</label>
-                        <input class="form-control"  id="ep_discount" name="ep_discount" type="number" value="<%=p_disc%>">
+                        <input class="form-control"  id="ep_discount" name="ep_discount" type="number" min="0" max="100" value="<%=p_disc%>" required>
+                        <small class="form-text text-muted">Discount can vary from 0-100.</small>
                     </div> <!-- form-group end.// -->
 
                     <div class="form-group">
