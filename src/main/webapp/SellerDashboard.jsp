@@ -118,10 +118,10 @@
 <div class="jumbotron">
     <div class="container" style="font-family: Ubuntu; font-size: large">
         <!--<h1> Welcome, ${sellerName}.</h1>-->
-        <h1> Welcome user</h1>
-        <h1> Here is your Business Platform!</h1>
-        <p>We provide platform for crores of Businesses to interact and grow. No Listing fees, easy steps and professional support that helps you grow your business.</p>
+        <h1>Welcome seller</h1>
         <p >Start Selling...</p>
+        <p>You can add your products using Add Products option.</p>
+        <p> You can view and update your products anytime.</p>
     </div>
 </div>
 
