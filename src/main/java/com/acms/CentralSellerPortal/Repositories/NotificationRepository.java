@@ -19,4 +19,7 @@ public interface  NotificationRepository extends JpaRepository<Notification, Lon
 
     Notification findBySellerIdAndProductIdAndIsUpdate(long s_id, long p_id, boolean update);
 
+    @Query(value="select count(*) from notification where ndate>=(select date from ecommerce where ecomm_id=?1)" , nativeQuery = true)
+    Integer getAllNotification(long eid);
+
 }

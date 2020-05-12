@@ -82,8 +82,13 @@
                 <form :hidden path="id"/>
                 <div class="form-row">
                     <div class="form-group">
-                        <button id = "view-notification" type="submit"   style="color: whitesmoke; background-color: #2A2A2A" class="btn"> Notifications</button>
-                    </div> <!-- form-group// -->
+                        <button id = "view-notification" type="submit"   style="color: whitesmoke; background-color: #2A2A2A" class="btn">
+                   <span>View-Notification</span>
+                        </button>
+                        <span class="badge" style=" background: darkred; color: white;">${ecommCount}</span>
+
+                    </div>
+                    <!-- form-group// -->
                     <!-- form-group end.// -->
                 </div>
             </form>

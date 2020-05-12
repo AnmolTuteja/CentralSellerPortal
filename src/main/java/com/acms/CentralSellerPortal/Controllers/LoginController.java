@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import com.acms.CentralSellerPortal.Entities.Seller;
 import com.acms.CentralSellerPortal.Repositories.SellerRepository;
 import com.acms.CentralSellerPortal.Services.EcommerceService;
+import com.acms.CentralSellerPortal.Services.NotificationService;
 import com.acms.CentralSellerPortal.Services.SellerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -30,6 +31,9 @@ public class LoginController {
 
     @Autowired
     private SellerService sellerService;
+
+    @Autowired
+    private NotificationService notificationService;
 
 
 
@@ -86,9 +90,12 @@ public class LoginController {
                 }
                 c.setFirst_login(false);
 
+                int count=notificationService.getAllNotification(c.getEcommId());
+
                 session.setAttribute("ecommName", c.getEcommName());
                 session.setAttribute("ecommEmailId", c.getEcommEmailId());
                 session.setAttribute("ecommPassword", c.getEcommPassword());
+                session.setAttribute("ecommCount", count);
 
                 RedirectView rv = new RedirectView();
                 String rurl="/EcommDashboard.jsp?e_id="+Long.toString(c.getEcommId());
