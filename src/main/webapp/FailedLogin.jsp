@@ -33,7 +33,7 @@
 <div class="container">
     <div class="row text-center">
         <div class="col-sm-6 col-sm-offset-3">
-            <br><br> <h2 style="color: darksalmon">Failed to Login</h2>
+            <br><br> <h2 style="color: red">Failed to Login</h2>
                              <br>
             <p style="color: darksalmon; font-size: large; font-family: Arial">Invalid. Please Check Your Username/Password </p><br><br>
             <a href="index.html" action="index.html" class="btn btn-primary" style="font-size: medium"> Log in </a>
