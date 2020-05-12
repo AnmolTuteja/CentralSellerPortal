@@ -106,34 +106,28 @@
         </div>
     </div>
 </nav>
-<br>
 
+
+<br>
 
 <div class="jumbotron" id="profile" style="font-size: large; font-family: Ubuntu " >
     <div class="container">
         <div id="seller-profile">
-            <td><b>Welcome,    ${sellerName}</b>         </td>
-            <br><br>
-            <%--        <td>ID: <%=id%>                             </td>--%>
-            <%--        <br>--%>
-            <td><b>Contact No:</b>   ${sellerContactNo}</td>
-            <br><br>
-            <td><b>E-mail: </b>  ${sellerEmailId}      </td>
-            <br><br>
-            <td><b>Store Name:</b>    ${shopName}       </td>
-            <br><br>
-            <td><b>Address: </b>  ${sellerAddress}     </td>
+            <h1><b>Welcome,    ${sellerName}</b> </h1>
             <br>
+            <p style="text-decoration-style: wavy"><b>Contact No:</b></p>
+            <p> ${sellerContactNo}</p>
             <br>
+            <p><b>E-mail: </b></p>
+            <p> ${sellerEmailId}      </p>
+            <br>
+            <p><b>Store Name:</b></p>
+            <p> ${shopName}       </p>
+            <br>
+            <p><b>Address: </b></p>
+            <p> ${sellerAddress} </p>
         </div>
     </div>
 </div>
-
-
-
-
-<br>
-
-
 </body>
 </html>

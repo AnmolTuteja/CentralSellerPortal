@@ -104,34 +104,34 @@
                     <div class="form-row">
                         <div class="col form-group">
                             <label>Name </label>
-                            <input type="text" id="s_name" name="s_name" class="form-control" maxlength="50" required value=${sellerName} placeholder=${sellerName}>
+                            <input type="text" id="s_name" name="s_name" class="form-control" maxlength="50" required value="${sellerName}" placeholder="${sellerName}">
                         </div> <!-- form-group end.// -->
                         <!-- form-group end.// -->
                     </div> <!-- form-row end.// -->
                     <div class="form-group">
                         <label>Address</label>
-                        <input type="text" id="s_address" name="s_address"  class="form-control" maxlength="100" required value=${sellerAddress} placeholder=${sellerAddress}>
+                        <input type="text" id="s_address" name="s_address"  class="form-control" maxlength="100" required value="${sellerAddress}" placeholder="${sellerAddress}" >
 
                     </div>
                     <div class="form-group">
                         <label>Mobile No.</label>
-                        <input type="text" id="s_mobile" name="s_mobile"  class="form-control" value=${sellerContactNo} placeholder=${sellerContactNo}   pattern="[1-9]{1}[0-9]{9}" required>
+                        <input type="text" id="s_mobile" name="s_mobile"  class="form-control" value="${sellerContactNo}" placeholder="${sellerContactNo}"   pattern="[1-9]{1}[0-9]{9}" required>
 
                     </div>
                     <div class="form-group">
                         <label>Email address</label>
-                        <input type="email" id="s_mail" name="s_mail" class="form-control"  value= ${sellerEmailId} placeholder=${sellerEmailId} maxlength="30" required>
+                        <input type="email" id="s_mail" name="s_mail" class="form-control"  value= "${sellerEmailId}" placeholder="${sellerEmailId}" maxlength="30" required>
                     </div> <!-- form-group end.// -->
                     <div class="form-group">
                         <label>Store Name</label>
-                        <input type="text" id="s_shop" name="s_shop"  class="form-control" value=${shopName} placeholder=${shopName} maxlength="50" required>
+                        <input type="text" id="s_shop" name="s_shop"  class="form-control" value="${shopName}" placeholder="${shopName}" maxlength="50" required>
 
                     </div>
 
 
                     <div class="form-group">
                         <label>Password</label>
-                        <input class="form-control" id="s_password" name="s_password"  value=${sellerPassword} placeholder=${sellerPassword} type="password" minlength="6" maxlength="20" required>
+                        <input class="form-control" id="s_password" name="s_password"  value="${sellerPassword}" type="password" minlength="6" maxlength="20" required>
                         <small class="text-muted">Password should contain 1 digit,1 lower case,1 upper case,1 special character.</small>
                     </div> <!-- form-group end.// -->
 

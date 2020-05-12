@@ -124,26 +124,26 @@
                         </select>
                     </div>
                 </div>
-                <table id="mytable" class="table table-bordred table-striped" >
+                <table id="mytable" class="table table-bordred table-striped" style="table-layout: fixed ; width:100% ;word-wrap:break-word" >
                     <thead>
-                    <th>ProductID</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Price(Rs.)</th>
-                    <th>Discount(%)</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <th  style="text-align:center">ProductID</th>
+                    <th >Name</th>
+                    <th >Description</th>
+                    <th style="text-align:center">Price(Rs.)</th>
+                    <th style="text-align:center">Discount(%)</th>
+                    <th style="text-align:center">Edit</th>
+                    <th style="text-align:center">Delete</th>
                     </thead>
                     <tbody>
                     <c:forEach var="e" items="${productList}">
                         <tr>
-                            <td>${e.productId}</td>
-                            <td>${e.productName}</td>
-                            <td>${e.productDescription}</td>
-                            <td>${e.price}</td>
-                            <td>${e.discount}</td>
-                            <td><a data-placement="top" data-toggle="tooltip" href="/EditListedProduct.jsp?p_id=${e.productId}&id=<%=id%>&p_name=${e.productName}&p_desc=${e.productDescription}&p_price=${e.price}&p_disc=${e.discount}"   action="EditListedProduct.jsp"role="button" title="Edit" ><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"  href="EditListedProduct.jsp" data-target="#edit" ><i class="fas fa-pencil-square-o"></i></button></a></td>
-                            <td><a data-placement="top" data-toggle="tooltip" href="/DeleteListedProduct.jsp?p_id=${e.productId}&id=<%=id%>"  action="DeleteListedProduct.jsp" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><i class="fas fa-trash"></i></button></a></td>
+                            <td style="text-align:center">${e.productId}</td>
+                            <td >${e.productName}</td>
+                            <td >${e.productDescription}</td>
+                            <td style="text-align:center">${e.price}</td>
+                            <td style="text-align:center">${e.discount}</td>
+                            <td style="text-align:center"><a data-placement="top" data-toggle="tooltip" href="/EditListedProduct.jsp?p_id=${e.productId}&id=<%=id%>&p_name=${e.productName}&p_desc=${e.productDescription}&p_price=${e.price}&p_disc=${e.discount}"   action="EditListedProduct.jsp"role="button" title="Edit" ><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"  href="EditListedProduct.jsp" data-target="#edit" ><i class="fas fa-pencil-square-o"></i></button></a></td>
+                            <td style="text-align:center"><a data-placement="top" data-toggle="tooltip" href="/DeleteListedProduct.jsp?p_id=${e.productId}&id=<%=id%>"  action="DeleteListedProduct.jsp" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><i class="fas fa-trash"></i></button></a></td>
                         </tr>
                     </c:forEach>
                     </tbody>

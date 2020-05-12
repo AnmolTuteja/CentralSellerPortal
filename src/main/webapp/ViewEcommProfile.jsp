@@ -110,13 +110,12 @@
 <div class="jumbotron" id="ecomm-profile" style="font-size: large; font-family: Ubuntu " >
     <div class="container">
         <div id="seller-profile">
-            <td><b>Welcome,    ${ecommName}</b>         </td>
-            <br><br>
-            <td><b>Email Id :</b>   ${ecommEmailId}</td>
+            <h1><b>Welcome,    ${ecommName}</b> </h1>
+            <br>
+            <p><b>Email Id :</b></p>
+            <p>${ecommEmailId}</p>
             <br>
 
-            <br>
-            <br>
         </div>
     </div>
 </div>

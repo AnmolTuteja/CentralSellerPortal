@@ -61,6 +61,10 @@ and open the template in the editor.
                                 <label>Email address</label>
                                 <input type="email" id="cEmailId" name="cEmailId" class="form-control" maxlength="30" placeholder="" required>
                                 <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                <p  style="color: red; font-size: large; font-family: Arial"><%
+                                    if (session.getAttribute("ecommEmailId") != null)
+                                        out.println(session.getAttribute("ecommEmailId")+ " already exists");
+                                %> </p>
                             </div>
 
                             <!-- form-group end.// -->
@@ -70,7 +74,7 @@ and open the template in the editor.
                             <div class="form-group">
                                 <label>Create password</label>
                                 <input class="form-control" name="cPassword"  id="cPassword" type="password" minlength="6" maxlength="20" required>
-                                <small class="text-muted">Password should contain 1 digit,1 lower case,1 upper case,1 special character.</small>
+                                <small class="text-muted">Password should contain 1 digit,1 special character,1 lower case and 1 upper case letter.</small>
                             </div> <!-- form-group end.// -->
                             <div class="form-group">
                                 <label>Confirm password</label>
@@ -88,6 +92,12 @@ and open the template in the editor.
 
                                 });
                             </script>
+                            <p  style="color: red; font-size: large; font-family: Arial ;text-align:center"><%
+                                if (session.getAttribute("ecommEmailId") != null)
+                                    out.println("Failed to Signup!");
+                            %> </p>
+
+
                             <script type="text/javascript">
 
                                 function Validate() {
@@ -103,7 +113,7 @@ and open the template in the editor.
                                     }
 
                                     if(!pattern.test(password)){
-                                        alert("Password should contain 1 digit,1 lower case,1 upper case,1 special character");
+                                        alert("Password should contain 1 digit,1 special character,1 lower case and 1 upper case letter.");
                                         return false;
                                     }
 

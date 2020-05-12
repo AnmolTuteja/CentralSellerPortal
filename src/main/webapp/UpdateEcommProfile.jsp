@@ -122,19 +122,19 @@
                     <div class="form-row">
                         <div class="col form-group">
                             <label>Name </label>
-                            <input type="text" id="c_name" name="c_name" class="form-control" value=${ecommName} placeholder=${ecommName} maxlength="50" required>
+                            <input type="text" id="c_name" name="c_name" class="form-control" value="${ecommName}" placeholder="${ecommName}" maxlength="50" required>
                         </div> <!-- form-group end.// -->
                         <!-- form-group end.// -->
                     </div> <!-- form-row end.// -->
 
                     <div class="form-group">
                         <label>Email address</label>
-                        <input type="email" id="c_mail" name="c_mail" class="form-control"  value= ${ecommEmailId} placeholder=${ecommEmailId} maxlength="30" required>
+                        <input type="email" id="c_mail" name="c_mail" class="form-control"  value= "${ecommEmailId}" placeholder="${ecommEmailId}" maxlength="30" required>
                     </div> <!-- form-group end.// -->
 
                     <div class="form-group">
                         <label>Password</label>
-                        <input class="form-control" id="c_password" name="c_password"  value=${ecommPassword} placeholder=${ecommPassword} type="password" minlength="6" maxlength="20" required>
+                        <input class="form-control" id="c_password" name="c_password"  value="${ecommPassword}"  type="password" minlength="6" maxlength="20" required>
                         <small class="text-muted">Password should contain 1 digit,1 lower case,1 upper case,1 special character.</small>
                     </div> <!-- form-group end.// -->
 

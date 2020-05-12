@@ -131,22 +131,22 @@
                                 </select>
                             </div>
                         </div>
-                        <table id="mytable" class="table table-bordred table-striped">
+                        <table id="mytable" class="table table-bordred table-striped" style="table-layout: fixed ; width:100% ;word-wrap:break-word">
                             <thead>
-                            <th>ProductID</th>
+                            <th style="text-align:center">ProductID</th>
                             <th>Name</th>
                             <th>Description</th>
-                            <th>Price(Rs.)</th>
-                            <th>Discount(%)</th>
+                            <th style="text-align:center">Price(Rs.)</th>
+                            <th style="text-align:center">Discount(%)</th>
                             </thead>
                             <tbody>
                             <c:forEach var="e" items="${productList}">
                                 <tr>
-                                    <td>${e.productId}</td>
+                                    <td style="text-align:center">${e.productId}</td>
                                     <td>${e.productName}</td>
                                     <td>${e.productDescription}</td>
-                                    <td>${e.price}</td>
-                                    <td>${e.discount}</td>
+                                    <td style="text-align:center">${e.price}</td>
+                                    <td style="text-align:center">${e.discount}</td>
                                     </tr>
                             </c:forEach>
                             </tbody>

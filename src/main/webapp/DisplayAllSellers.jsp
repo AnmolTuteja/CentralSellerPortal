@@ -129,7 +129,7 @@
                         </select>
                     </div>
                 </div>
-                <table id="mytable" class="table table-bordred table-striped">
+                <table id="mytable" class="table table-bordred table-striped" style="table-layout: fixed ; width:100% ;word-wrap:break-word">
                     <thead>
                     <th>Name</th>
                     <th>Address</th>

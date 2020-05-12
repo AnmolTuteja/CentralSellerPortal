@@ -105,7 +105,7 @@
 <div class="jumbotron">
     <div class="container" style="font-family: Ubuntu; font-size: large">
 
-        <h3 style="color:darkred"> Delete Product </h3>
+        <h3 style="color:black" > Delete Product </h3>
         <h4 style="font-size:20px;color:#5C5C5C;">Are you sure? </h4>
 
         <div class="ui-group-buttons">

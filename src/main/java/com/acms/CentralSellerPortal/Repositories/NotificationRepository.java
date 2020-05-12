@@ -16,4 +16,7 @@ public interface  NotificationRepository extends JpaRepository<Notification, Lon
 
     @Query(value="SELECT * FROM notification n where n.ndate>=?1" , nativeQuery = true)
     List<Notification> findByDate(Date date);
+
+    Notification findBySellerIdAndProductIdAndIsUpdate(long s_id, long p_id, boolean update);
+
 }
