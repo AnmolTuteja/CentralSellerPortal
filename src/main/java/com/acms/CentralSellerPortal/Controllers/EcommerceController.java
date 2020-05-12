@@ -55,7 +55,7 @@ public class EcommerceController {
         {
             RedirectView redirectView = new RedirectView();
             redirectView.setContextRelative(true);
-            redirectView.setUrl("/FailedCompanySignup.jsp");
+            redirectView.setUrl("/SignUpAsCompany.jsp");
             return redirectView;
         }
 

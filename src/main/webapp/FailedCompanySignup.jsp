@@ -31,12 +31,12 @@
             <br><br> <h2 style="color: red">Failed to Signup</h2>
             <br>
 
-            <p  style="color: green; font-size: large; font-family: Arial"><%
+            <p  style="color: red; font-size: large; font-family: Arial"><%
                if (session.getAttribute("ecommEmailId") != null)
                 out.println("Email Id :" + session.getAttribute("ecommEmailId")+ " already exists");
-            %>
+            %> </p>
 
-            <p style="color: green; font-size: large; font-family: Arial">Please try with different values!!</p><br><br>
+            <p style="color: red; font-size: large; font-family: Arial">Please try with different values!!</p><br><br>
             <a href="SignUpAsCompany.jsp" action="SignUpAsCompany.jsp" class="btn btn-primary" style="font-size: medium"> Return to Signup </a>
             <br><br>
         </div>

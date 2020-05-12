@@ -112,7 +112,7 @@
 <br>
 <div class="jumbotron">
     <div class="container" style="font-family: Ubuntu; font-size: large">
-        <h2> Welcome, ${sellerName}.</h2>
+        <!--<h2> Welcome, ${sellerName}.</h2>  -->
         <h3 style="color: #c7254e">Failed to add Product. Try Again!</h3>
     </div>
 </div>

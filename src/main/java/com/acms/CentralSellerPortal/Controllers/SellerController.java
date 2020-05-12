@@ -81,7 +81,8 @@ public class SellerController {
         {
             RedirectView redirectView = new RedirectView();
             redirectView.setContextRelative(true);
-            redirectView.setUrl("/FailedSellerSignup.jsp");
+            //redirectView.setUrl("/FailedSellerSignup.jsp");
+            redirectView.setUrl("/SignUpAsSeller.jsp");
             return redirectView;
         }
 

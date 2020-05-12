@@ -37,7 +37,7 @@
             <p  style="color: green; font-size: large; font-family: Arial"><%
                if (session.getAttribute("sellerEmailId") != null)
                 out.println("Email Id :" + session.getAttribute("sellerEmailId")+ " already exists");
-            %>
+            %>  </p>
 
             <p style="color: green; font-size: large; font-family: Arial">Please try with different values!!</p><br><br>
             <a href="SignUpAsSeller.jsp" action="SignUpAsSeller.jsp" class="btn btn-primary" style="font-size: medium"> Return to Signup </a>

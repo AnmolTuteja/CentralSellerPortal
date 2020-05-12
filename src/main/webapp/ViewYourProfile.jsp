@@ -106,15 +106,15 @@
         </div>
     </div>
 </nav>
+
+
 <br>
-
-
 
 <div class="jumbotron" id="profile" style="font-size: large; font-family: Ubuntu " >
     <div class="container">
         <div id="seller-profile">
             <h1><b>Welcome,    ${sellerName}</b> </h1>
-            <br><br>
+            <br>
             <p style="text-decoration-style: wavy"><b>Contact No:</b></p>
             <p> ${sellerContactNo}</p>
             <br>
@@ -125,17 +125,9 @@
             <p> ${shopName}       </p>
             <br>
             <p><b>Address: </b></p>
-            <p> ${sellerAddress}     </p>
-            <br>
+            <p> ${sellerAddress} </p>
         </div>
     </div>
 </div>
-
-
-
-
-<br>
-
-
 </body>
 </html>
