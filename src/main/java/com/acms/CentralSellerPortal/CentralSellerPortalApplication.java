@@ -47,19 +47,20 @@ public class CentralSellerPortalApplication {
 		TimerTask task=new TimerTask(){
 			@Override
 			public void run()  {
-				System.out.println("Reached run");
+				//System.out.println("Reached run");
 				if(NotificationService.flag==true){
 					List<Ecommerce> ecommerce = new ArrayList<Ecommerce>();
 					ecommerce = ecommerceRepository.findAll();
 
 					for(Ecommerce e: ecommerce) {
 
-						try {
-							emailService.sendMail(e.getEcommEmailId(),"Updates From Central Seller Portal",
-									true);
-						} catch (MessagingException | FileNotFoundException ex) {
-							ex.printStackTrace();
-						}
+//						try {
+//							emailService.sendMail(e.getEcommEmailId(),"Updates From Central Seller Portal",
+//									true);
+//						} catch (MessagingException | FileNotFoundException ex) {
+//							ex.printStackTrace();
+//						}
+						System.out.println("mail sent");
 
 					}
 					NotificationService.flag=false;

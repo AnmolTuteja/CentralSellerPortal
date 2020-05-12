@@ -125,8 +125,8 @@
                             <c:forEach var="n" items="${notificationList}">
                                 <tr>
                                     <td>
-                                        <form action="/getProductOrSeller/<%=e_id%>/${n.seller_id}/${n.product_id}">
-                                            <button style="border: 0px; background-color: #E9ECEF" type="submit"># ${n.notification_message}</button>
+                                        <form action="/getProductOrSeller/<%=e_id%>/${n.sellerId}/${n.productId}">
+                                            <button style="border: 0px; background-color: #E9ECEF" type="submit"># ${n.notificationMessage}</button>
                                         </form>
                                     </td>
 

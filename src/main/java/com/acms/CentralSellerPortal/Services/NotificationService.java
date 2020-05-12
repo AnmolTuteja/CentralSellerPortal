@@ -24,11 +24,16 @@ public class NotificationService {
     public static boolean flag = false;
 
     public void save(String message,
-                     Date date,long s_id,long p_id)
+                     Date date,long s_id,long p_id, boolean update)
     {
 
-        Notification notification=new Notification(message,date,s_id,p_id);
+        Notification notification=new Notification(message,date,s_id,p_id , update);
 
+        Notification old = notificationRepository.findBySellerIdAndProductIdAndIsUpdate(s_id , p_id, update);
+        if(old != null) {
+            System.out.println("entered old wala if");
+            notificationRepository.delete(old);
+        }
 
         notificationRepository.save(notification);
         flag = true;

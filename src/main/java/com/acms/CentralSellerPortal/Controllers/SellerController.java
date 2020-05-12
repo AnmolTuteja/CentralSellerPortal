@@ -94,7 +94,7 @@ public class SellerController {
         long s_id=seller1.getSellerId();
 
         Date dw=new Date();
-        notificationService.save(seller1.getSellerName()+" has signed up to this portal ",dw ,s_id,0);
+        notificationService.save(seller1.getSellerName()+" has signed up to this portal ",dw ,s_id,0, false);
         RedirectView redirectView = new RedirectView();
         redirectView.setContextRelative(true);
         redirectView.setUrl("/AddSellerSuccessful.jsp");
@@ -110,27 +110,30 @@ public class SellerController {
             @PathVariable("p_id") Long productId,
             HttpSession session
     ){
-        if(sellerId==0){
+        RedirectView rv = new RedirectView();
+
+        if(sellerId==0&&productId!=0){
             //get product
             Product notificationProduct= productService.findByProductId(productId);
             session.setAttribute("notificationProduct", notificationProduct);
-            RedirectView rv = new RedirectView();
             String rurl="/ViewProductNotification.jsp?e_id="+Long.toString(ecommId);
             System.out.println(rurl);
             rv.setUrl(rurl);
             return rv;
 
 
-        }else {
+        }else if(productId==0&&sellerId!=0){
             //get seller
             Seller notificationSeller = sellerService.findById(sellerId);
             session.setAttribute("notificationSeller", notificationSeller);
-            RedirectView rv = new RedirectView();
             String rurl="/ViewSellerNotification.jsp?e_id="+Long.toString(ecommId);
             System.out.println(rurl);
             rv.setUrl(rurl);
             return rv;
+        }else if (productId==0&&sellerId==0){
+            rv.setUrl("/ProductDeleted.jsp?e_id="+Long.toString(ecommId));
         }
+        return rv;
 
     }
 
@@ -264,7 +267,7 @@ public class SellerController {
         //notification mechanism..
         long s_id=seller.getSellerId();
         Date dw=new Date();
-        notificationService.save(seller.getSellerName()+" has updated profile",dw ,s_id,0);
+        notificationService.save(seller.getSellerName()+" has updated profile",dw ,s_id,0, true);
         RedirectView rv = new RedirectView();
         String rurl="/SellerDashboard.jsp?id="+Long.toString(seller.getSellerId());
         rv.setUrl(rurl);
