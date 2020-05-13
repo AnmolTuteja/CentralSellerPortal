@@ -50,4 +50,9 @@ public class NotificationService {
         return notificationList;
 
     }
+
+    public Integer getAllNotification(long eId)
+    {
+        return notificationRepository.getAllNotification(eId);
+    }
 }

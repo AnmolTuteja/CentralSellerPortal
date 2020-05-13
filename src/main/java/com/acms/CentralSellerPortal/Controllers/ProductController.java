@@ -37,7 +37,8 @@ public class ProductController {
                                    @RequestParam("p_name") String n ,
                                    @RequestParam("p_description") String d,
                                    @RequestParam("p_price") int p,
-                                   @RequestParam("p_discount") int disc)
+                                   @RequestParam("p_discount") int disc,
+                                   HttpSession session)
     {
         Product product = new Product();
         product.setProductName(n);
@@ -58,7 +59,8 @@ public class ProductController {
 
             //return "updated..";
         }
-
+        List<Product> productList = productService.findBySeller_SellerId(seller_id);
+        session.setAttribute("productList",productList);
         RedirectView rv = new RedirectView();
         String rurl="/MyProducts.jsp?id="+Long.toString(seller_id);
         rv.setUrl(rurl);
