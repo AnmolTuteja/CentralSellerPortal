@@ -89,7 +89,7 @@ public class LoginController {
                 session.setAttribute("ecommName", c.getEcommName());
                 session.setAttribute("ecommEmailId", c.getEcommEmailId());
                 session.setAttribute("ecommPassword", c.getEcommPassword());
-
+                session.setAttribute("notify", "1");
                 RedirectView rv = new RedirectView();
                 String rurl="/EcommDashboard.jsp?e_id="+Long.toString(c.getEcommId());
                 rv.setUrl(rurl);

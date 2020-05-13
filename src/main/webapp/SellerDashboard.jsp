@@ -40,6 +40,10 @@
     </style>
 
 
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">  -->
+    <style>
+        .mySlides {display:none;}
+    </style>
 </head>
 <body>
 <% long id = Long.parseLong(request.getParameter("id")); %>
@@ -124,6 +128,35 @@
         <p> You can view and update your products anytime.</p>
     </div>
 </div>
+
+<div class="w3-content w3-section" style="max-width:1000px">
+    <div class="mySlides" style="background-image:url('../resources/static/images/addProductsLarge.png') ;width:100%">
+        <div class="carousel-caption d-none d-md-block">
+            <h3 class="display-4">First Slide</h3>
+            <p class="lead">This is a description for the first slide.</p>
+        </div>
+    </div>
+    <img class="mySlides" src="/images/addingProducts.png" style="width:100%">
+</div>
+
+
+<script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}
+        x[myIndex-1].style.display = "block";
+        setTimeout(carousel, 2000); // Change image every 2 seconds
+    }
+</script>
+
 
 <br>
 

@@ -161,6 +161,26 @@
                     </script>
 
 
+                    <p id="demo"></p>
+                    <p id="demo1"></p>
+                    <%
+                        String session_val = (String)session.getAttribute("notify");
+                        System.out.println("session_val"+session_val);
+                    %>
+                    <script  type="text/javascript">
+                        var myVar = setInterval(myTimer, 1000);
+
+                        function myTimer() {
+                            var d = new Date();
+                            var t = d.toLocaleTimeString();
+                            var n='<%=session_val%>';
+                            document.getElementById("demo").innerHTML = t;
+                            if (n!=0)
+                                document.getElementById("demo1").innerHTML = n;
+                        }
+                    </script>
+
+
                     <br>
                     <div class="form-group">
                         <button  type="submit"  class="btn btn-primary btn-block"> Save Changes</button>

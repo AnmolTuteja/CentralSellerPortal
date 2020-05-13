@@ -27,6 +27,9 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
 
+    <style>
+        .mySlides {display:none;}
+    </style>
 </head>
 <body>
 <% long e_id = Long.parseLong(request.getParameter("e_id")); %>
@@ -103,14 +106,37 @@
     </div>
 </nav>
 <br>
-<div class="jumbotron">
+<!--<div class="jumbotron">
     <div class="container" style="font-family: Ubuntu; font-size: large">
-        <h1> Welcome, ${ecommName}.</h1>
         <h1> Here is your Business Platform!</h1>
         <p>We provide platform for crores of Businesses to interact and grow. No Listing fees, easy steps and professional support that helps you grow your business.</p>
         <p >Start Exploring sellers from around the world..</p>
     </div>
+</div>  -->
+<h1 style="font-size:25px; font-weight:900;">   Welcome, ${ecommName} </h1>
+<div class="w3-content w3-section" style="max-width:2000px">
+    <img class="mySlides" src="/images/ecomm3.png" style="width:100%">
 </div>
+
+
+<script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}
+        x[myIndex-1].style.display = "block";
+        setTimeout(carousel, 2000); // Change image every 2 seconds
+    }
+</script>
+
+
 
 <br>
 
