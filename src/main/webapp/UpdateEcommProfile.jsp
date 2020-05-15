@@ -161,7 +161,7 @@
                     </script>
 
 
-                    <p id="demo"></p>
+                   <!-- <p id="demo"></p>
                     <p id="demo1"></p>
                     <%
                         String session_val = (String)session.getAttribute("notify");
@@ -178,7 +178,7 @@
                             if (n!=0)
                                 document.getElementById("demo1").innerHTML = n;
                         }
-                    </script>
+                    </script>-->
 
 
                     <br>

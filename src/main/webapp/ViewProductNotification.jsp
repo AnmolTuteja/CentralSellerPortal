@@ -110,10 +110,10 @@
 <div class="jumbotron" id="product">
     <div class="container" style="font-family: Ubuntu; font-size: large">
         <h2>From Notifications: Updated Product </h2>
-        <p><b>Name:</b>${notificationProduct.productName}</p>
-        <p><b>Description</b>${notificationProduct.productDescription}</p>
-        <p><b>Price:</b>${notificationProduct.price}</p>
-        <p><b>Discount</b>${notificationProduct.discount}</p><br>
+        <p><b>Name :</b>${notificationProduct.productName}</p>
+        <p><b>Description :</b>${notificationProduct.productDescription}</p>
+        <p><b>Price :</b>${notificationProduct.price}</p>
+        <p><b>Discount :</b>${notificationProduct.discount}</p><br>
         <form action="/getSellerByProductId/${notificationProduct.productId}/<%=e_id%>">
             <button type="submit" class="btn btn-outline-primary">View Seller</button>
         </form>

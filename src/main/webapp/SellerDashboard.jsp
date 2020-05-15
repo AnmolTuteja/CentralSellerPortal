@@ -119,24 +119,20 @@
     </div>
 </nav>
 <br>
-<div class="jumbotron">
+
+<!--<div class="jumbotron">
     <div class="container" style="font-family: Ubuntu; font-size: large">
-        <!--<h1> Welcome, ${sellerName}.</h1>-->
+        <h1> Welcome, ${sellerName}.</h1>
         <h1>Welcome seller</h1>
         <p >Start Selling...</p>
         <p>You can add your products using Add Products option.</p>
         <p> You can view and update your products anytime.</p>
     </div>
-</div>
+</div> -->
 
-<div class="w3-content w3-section" style="max-width:1000px">
-    <div class="mySlides" style="background-image:url('../resources/static/images/addProductsLarge.png') ;width:100%">
-        <div class="carousel-caption d-none d-md-block">
-            <h3 class="display-4">First Slide</h3>
-            <p class="lead">This is a description for the first slide.</p>
-        </div>
-    </div>
-    <img class="mySlides" src="/images/addingProducts.png" style="width:100%">
+<h1 style="font-size:25px; font-weight:900;">   Welcome, ${sellerName} </h1>
+<div class="w3-content w3-section" style="max-width:2000px">
+    <img class="mySlides" src="/images/welcomeSeller2.png" style="width:100%">
 </div>
 
 
