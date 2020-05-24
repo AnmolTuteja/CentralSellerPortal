@@ -220,19 +220,19 @@ public class SellerController {
         sellers = sellerService.findAll();
 
         int flag=0;
-        session.removeAttribute("sellerContactNo");
-        session.removeAttribute("sellerEmailId");
+        session.removeAttribute("sellerContactNoU");
+        session.removeAttribute("sellerEmailIdU");
 
         //checking for if entry already exist for unique attribute
         for(Seller s: sellers) {
             if ((seller_emailId).equals(s.getSellerEmailId()) && !(seller_id).equals(s.getSellerId())) {
-                session.setAttribute("sellerEmailId", s.getSellerEmailId());
+                session.setAttribute("sellerEmailIdU", s.getSellerEmailId());
                 flag=1;
             }
 
             if ((seller_contactNo).equals(s.getSellerContactNo()) && !(seller_id).equals(s.getSellerId() )) {
 
-                session.setAttribute("sellerContactNo", s.getSellerContactNo());
+                session.setAttribute("sellerContactNoU", s.getSellerContactNo());
                 flag=1;
             }
 
@@ -242,7 +242,7 @@ public class SellerController {
         {
             RedirectView redirectView = new RedirectView();
             redirectView.setContextRelative(true);
-            redirectView.setUrl("/FailedSellerSignup.jsp");
+            redirectView.setUrl("/UpdateSellerProfile.jsp?id="+Long.toString(seller_id));
             return redirectView;
         }
 

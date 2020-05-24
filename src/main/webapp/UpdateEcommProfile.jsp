@@ -130,6 +130,10 @@
                     <div class="form-group">
                         <label>Email address</label>
                         <input type="email" id="c_mail" name="c_mail" class="form-control"  value= "${ecommEmailId}" placeholder="${ecommEmailId}" maxlength="30" required>
+                        <p  style="color: red; font-size: large; font-family: Arial"><%
+                            if (session.getAttribute("ecommEmailIdU") != null)
+                                out.println(session.getAttribute("ecommEmailIdU")+ " already exists");
+                        %> </p>
                     </div> <!-- form-group end.// -->
 
                     <div class="form-group">
@@ -138,6 +142,12 @@
                         <small class="text-muted">Password should contain 1 digit,1 lower case,1 upper case,1 special character.</small>
                     </div> <!-- form-group end.// -->
 
+                    <p  style="color: red; font-size: large; font-family: Arial ;text-align:center"><%
+                        if (session.getAttribute("ecommEmailIdU") != null) {
+                            out.println("Failed to Update!");
+                            session.setAttribute("ecommEmailIdU", null);
+                        }
+                    %> </p>
                     <script type="text/javascript">
 
                         function Validate() {

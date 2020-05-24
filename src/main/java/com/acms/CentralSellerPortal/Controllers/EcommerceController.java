@@ -101,15 +101,14 @@ public class EcommerceController {
     {
 
         int flag=0;
-        session.removeAttribute("sellerContactNo");
-        session.removeAttribute("sellerEmailId");
+        session.removeAttribute("ecommEmailIdU");
 
         List<Ecommerce> ecommerces=ecommerceService.findAll();
         for(Ecommerce e:ecommerces){
 
             if ((ecommEmailId).equals(e.getEcommEmailId())  && !(ecommId).equals(e.getEcommId()) ) {
 
-                session.setAttribute("ecommEmailId", e.getEcommEmailId());
+                session.setAttribute("ecommEmailIdU", e.getEcommEmailId());
                 flag=1;
             }
 
@@ -119,7 +118,7 @@ public class EcommerceController {
         {
             RedirectView redirectView = new RedirectView();
             redirectView.setContextRelative(true);
-            redirectView.setUrl("/FailedCompanySignup.jsp");
+            redirectView.setUrl("/UpdateEcommProfile.jsp?e_id="+Long.toString(ecommId));
             return redirectView;
         }
 

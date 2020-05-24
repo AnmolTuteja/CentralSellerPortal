@@ -116,11 +116,18 @@
                     <div class="form-group">
                         <label>Mobile No.</label>
                         <input type="text" id="s_mobile" name="s_mobile"  class="form-control" value="${sellerContactNo}" placeholder="${sellerContactNo}"   pattern="[1-9]{1}[0-9]{9}" required>
-
+                        <p  style="color: red;  font-family: Arial"><%
+                            if (session.getAttribute("sellerContactNoU") != null)
+                                out.println( session.getAttribute("sellerContactNoU")+ " already exists");
+                        %>   </p>
                     </div>
                     <div class="form-group">
                         <label>Email address</label>
                         <input type="email" id="s_mail" name="s_mail" class="form-control"  value= "${sellerEmailId}" placeholder="${sellerEmailId}" maxlength="30" required>
+                        <p  style="color: red;  font-family: Arial"><%
+                            if (session.getAttribute("sellerEmailIdU") != null)
+                                out.println( session.getAttribute("sellerEmailIdU")+ " already exists");
+                        %>  </p>
                     </div> <!-- form-group end.// -->
                     <div class="form-group">
                         <label>Store Name</label>
@@ -135,6 +142,14 @@
                         <small class="text-muted">Password should contain 1 digit,1 lower case,1 upper case,1 special character.</small>
                     </div> <!-- form-group end.// -->
 
+
+                    <h2  style="color: red; font-size: large; font-family: Arial ; text-align:center;"><%
+                        if (session.getAttribute("sellerContactNoU") != null || session.getAttribute("sellerEmailIdU") != null) {
+                            out.println("Failed to Update!");
+                            session.setAttribute("sellerContactNoU" , null);
+                            session.setAttribute("sellerEmailIdU" , null);
+                        }
+                    %>   </h2>
                     <script type="text/javascript">
 
                         function Validate() {
